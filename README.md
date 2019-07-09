@@ -1,2 +1,2 @@
-# home-chat
+# Home Chat
 Pet project

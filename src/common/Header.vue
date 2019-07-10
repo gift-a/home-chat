@@ -1,25 +1,41 @@
 <template>
-	<header>Home Chat</header>
+	<header class="primary-color-dark">
+		<span class="logo">Home Chat</span>
+		<button @click="onMenuClick" class="primary-color">Menu</button>
+	</header>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
+import AppService from '../App.service';
+
+
 export default Vue.extend({
 	name: 'Header',
+	data() {
+		return {
+		}
+	},
+	methods: {
+		onMenuClick() {
+			AppService.toggleMenu();
+		},
+	}
 })
 </script>
 
 <style scoped>
 	header {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 32px;
+		display: flex;
+		justify-content: space-between;
+	}
+	.logo {
 		font-size: 2rem;
-		z-index: 50;
-		background-color: darkslategrey;
-		color: white;
+	}
+	button {
+		text-transform: uppercase;
+		font-weight: bolder;
+		cursor: pointer;
 	}
 </style>
 

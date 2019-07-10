@@ -1,25 +1,34 @@
 <template>
-	<main>
-		<div>
-			content
-		</div>
-	</main>
+	<div class='root'>
+		<Menu></Menu>		
+		<main class="secondary-color-light">
+			<div>
+				content
+			</div>
+		</main>
+	</div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
+import Menu from './Menu.vue';
+
 export default Vue.extend({
-	name: 'Root'
+	name: 'Root',
+	components: {
+		Menu,
+	},
 })
 </script>
 
 <style scoped>
-	main {
-		padding-top: 32px;
-		position: relative;
-		font-size: 1.2rem;
-		background-color: lightcyan;
-		min-height: 100vh;
-		overflow-y: auto;
-	}
+.root {
+	position: relative;
+}
+
+main {
+	min-height: 100%;
+	font-size: 1.2rem;
+	overflow-y: auto;
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
 	<div class='root'>
 		<Menu></Menu>		
-		<main class="secondary-color-light">
+		<main>
 			<div>
 				content
 			</div>
@@ -30,5 +30,6 @@ main {
 	min-height: 100%;
 	font-size: 1.2rem;
 	overflow-y: auto;
+	background-color: var(--secondary-bg-light)
 }
 </style>

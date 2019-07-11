@@ -21,12 +21,13 @@ export default Vue.extend({
 </script>
 
 <style>
+@import './styles/variables.css';
 @import './styles/main.css';
 
 #app {
-  height: 100%;
   display: grid;
   grid-template-rows: 32px 1fr;
+  height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 </style>

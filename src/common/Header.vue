@@ -1,7 +1,7 @@
 <template>
-	<header class="primary-color-dark">
+	<header>
 		<span class="logo">Home Chat</span>
-		<button @click="onMenuClick" class="primary-color">Menu</button>
+		<button @click="onMenuClick">Menu</button>
 	</header>
 </template>
 
@@ -28,6 +28,8 @@ export default Vue.extend({
 	header {
 		display: flex;
 		justify-content: space-between;
+		background-color: var(--primary-bg-dark);
+		color: var(--light-color);
 	}
 	.logo {
 		font-size: 2rem;

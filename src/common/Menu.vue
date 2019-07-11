@@ -1,7 +1,7 @@
 <template>
-	<aside v-show="isOpen" class="secondary-color-dark">
+	<aside v-show="isOpen">
 		<ul>
-			<li v-for="item in menuItems" :key="item" class="secondary-color">{{ item }}</li>
+			<li v-for="item in menuItems" :key="item">{{ item }}</li>
 		</ul>
 	</aside>
 </template>
@@ -24,7 +24,7 @@ export default Vue.extend({
 	},
 	created() {
 		this.isOpen = AppService.isMenuOpen;
-		AppService.$on('toggleMenu', (isOpen) => this.isOpen = isOpen);
+		AppService.$on('toggleMenu', (isOpen: boolean) => this.isOpen = isOpen);
 	},
 })
 </script>
@@ -39,6 +39,7 @@ export default Vue.extend({
 		border-left: 1px solid gray;
 		box-shadow: -12px 6px 6px rgba(0, 0, 0, 0.2);
 		z-index: 100;
+		background-color: var(--secondary-bg-dark);
 	}
 		
 	li {
@@ -46,6 +47,7 @@ export default Vue.extend({
 		width: 100%;
 		border-top: 1px solid gray;
 		border-bottom: 1px solid gray;
+		background-color: var(--secondary-bg);
 	}
 	
 	li:last-child {

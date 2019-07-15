@@ -29,7 +29,9 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/variables";
+
 	aside {
 		width: 280px;
 		position: absolute;
@@ -39,7 +41,7 @@ export default Vue.extend({
 		border-left: 1px solid gray;
 		box-shadow: -12px 6px 6px rgba(0, 0, 0, 0.2);
 		z-index: 100;
-		background-color: var(--secondary-bg-dark);
+		background-color: $secondary-bg-dark;
 	}
 		
 	li {
@@ -47,7 +49,7 @@ export default Vue.extend({
 		width: 100%;
 		border-top: 1px solid gray;
 		border-bottom: 1px solid gray;
-		background-color: var(--secondary-bg);
+		background-color: $secondary-bg;
 	}
 	
 	li:last-child {

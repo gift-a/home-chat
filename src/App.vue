@@ -20,9 +20,8 @@ export default Vue.extend({
 });
 </script>
 
-<style>
-@import './styles/variables.css';
-@import './styles/main.css';
+<style lang="scss">
+@import './styles/main.scss';
 
 #app {
   display: grid;

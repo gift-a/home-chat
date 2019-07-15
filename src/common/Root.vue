@@ -21,7 +21,9 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/variables";
+
 .root {
 	position: relative;
 }
@@ -30,6 +32,6 @@ main {
 	min-height: 100%;
 	font-size: 1.2rem;
 	overflow-y: auto;
-	background-color: var(--secondary-bg-light)
+	background-color: $secondary-bg-light;
 }
 </style>

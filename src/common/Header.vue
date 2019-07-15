@@ -24,12 +24,14 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/variables";
+
 	header {
 		display: flex;
 		justify-content: space-between;
-		background-color: var(--primary-bg-dark);
-		color: var(--light-color);
+		background-color: $primary-bg-dark;
+		color: $light-color;
 	}
 	.logo {
 		font-size: 2rem;

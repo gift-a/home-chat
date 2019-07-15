@@ -1,13 +1,17 @@
 <template>
-  <div id='app'>
-    <Header></Header>
-    <Root></Root>
+  <div id="app">
+    <Header class="app__header"></Header>
+    <div class="app__menu">
+      <Menu></Menu>
+    </div>
+    <Root class="app__root"></Root>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Header from './common/Header.vue';
+import Menu from './common/Menu.vue';
 import Root from './common/Root.vue';
 
 
@@ -15,6 +19,7 @@ export default Vue.extend({
   name: 'app',
   components: {
     Header,
+    Menu,
     Root,
   }
 });
@@ -25,8 +30,27 @@ export default Vue.extend({
 
 #app {
   display: grid;
-  grid-template-rows: 32px 1fr;
+  grid-template-rows: 32px auto;
+  grid-template-columns: 0px auto;
+  grid-template-areas: 
+    " menu header "
+    " menu root ";
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+
+.app {
+  &__header {
+    grid-area: header;
+  }
+  
+  &__menu {
+    grid-area: menu;
+    position: relative;
+  }
+  
+  &__root {
+    grid-area: root;
+  }
 }
 </style>

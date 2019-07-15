@@ -1,6 +1,5 @@
 <template>
-	<div class='root'>
-		<Menu></Menu>		
+	<div class='root'>	
 		<main>
 			<div>
 				content
@@ -11,13 +10,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Menu from './Menu.vue';
 
 export default Vue.extend({
 	name: 'Root',
-	components: {
-		Menu,
-	},
+	components: {},
 })
 </script>
 

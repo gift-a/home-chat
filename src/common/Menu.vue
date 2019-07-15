@@ -14,7 +14,7 @@ export default Vue.extend({
 	name: 'Menu',
 	data() {
 		return {
-			isOpen: false,
+			isOpen: true,
 			menuItems: [
 				'Home',
 				'Chat',
@@ -35,33 +35,23 @@ export default Vue.extend({
 	aside {
 		width: 280px;
 		position: absolute;
-		right: 0;
+		left: 0;
 		top: 0;
 		bottom: 0;
 		border-left: 1px solid gray;
 		box-shadow: -12px 6px 6px rgba(0, 0, 0, 0.2);
-		z-index: 100;
-		background-color: $secondary-bg-dark;
+		z-index: 10;
+		background-color: $primary-bg-dark;
 	}
 		
 	li {
 		padding: 1rem;
 		width: 100%;
-		border-top: 1px solid gray;
-		border-bottom: 1px solid gray;
-		background-color: $secondary-bg;
-	}
-	
-	li:last-child {
-		border-bottom: none;
-	}
-	
-	li:first-child {
-		border-top: none;
+		background-color: $primary-bg;
 	}
 	
 	li:hover {
-		color: white;
-		background-color: gray;
+		color: $light-color;
+		background-color: $light-grey;
 	}
 </style>

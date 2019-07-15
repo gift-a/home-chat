@@ -1,0 +1,10 @@
+@import "../styles/variables";
+
+header {
+	display: flex;
+	justify-content: space-between;
+	background-color: $primary-bg-light;
+}
+.logo {
+	font-size: $font-size-32;
+}

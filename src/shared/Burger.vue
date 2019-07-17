@@ -17,12 +17,12 @@ export default Vue.extend({
 @import "../styles/variables";
 
 	.burger-button {
-		position: absolute;
+		position: relative;
 		top: 0;
 		left: 0;
 		z-index: 30;
 		width: 30px;
-		height: 25px;
+		height: 26px;
 		border-top: 2px solid $secondary-bg;
 		cursor: pointer;
 		

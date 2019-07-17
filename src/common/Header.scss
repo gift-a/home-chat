@@ -1,10 +1,18 @@
-@import "../styles/variables";
+@import '../styles/variables';
 
 header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	height: 42px;
+	padding: 6px;
 	background-color: $primary-bg-light;
 }
+
 .logo {
 	font-size: $font-size-32;
+}
+
+.menu-button {
+	position: relative;
 }

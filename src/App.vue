@@ -30,10 +30,10 @@ export default Vue.extend({
 
 #app {
   display: grid;
-  grid-template-rows: 32px auto;
-  grid-template-columns: 0px auto;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 0px 1fr;
   grid-template-areas: 
-    " menu header "
+    " header header "
     " menu root ";
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

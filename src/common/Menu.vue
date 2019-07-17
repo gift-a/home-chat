@@ -1,8 +1,10 @@
 <template>
 	<aside v-show="isOpen">
-		<ul>
-			<li v-for="item in menuItems" :key="item">{{ item }}</li>
-		</ul>
+		<div class="animation-cover">
+			<ul>
+				<li v-for="( item, i ) in menuItems" :key="item" :style="{ 'animation-delay': i * 0.5 + 's' }">{{ item }}</li>
+			</ul>
+		</div>
 	</aside>
 </template>
 
@@ -31,27 +33,69 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import "../styles/variables";
-
 	aside {
-		width: 280px;
 		position: absolute;
-		left: 0;
 		top: 0;
 		bottom: 0;
-		border-left: 1px solid gray;
-		box-shadow: -12px 6px 6px rgba(0, 0, 0, 0.2);
+		left: 0;
 		z-index: 10;
-		background-color: $primary-bg-dark;
+		width: 280px;
 	}
-		
+	
+	ul {
+		position: relative;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	
 	li {
-		padding: 1rem;
 		width: 100%;
+		padding: 1rem;
 		background-color: $primary-bg;
+		animation-name: shift-right;
+		animation-duration: 0.5s;
+		animation-timing-function: ease-out;
+		animation-fill-mode: forwards;
+		transform: translateX(-100%) rotateX(-90deg);
+		transform-origin: 0% 0%;
+		margin: 4px;
 	}
 	
 	li:hover {
 		color: $light-color;
 		background-color: $light-grey;
+	}
+	
+	.animation-cover {
+		width: 100%;
+		height: 100%;
+		background-color: $primary-bg-dark;
+		box-shadow: -12px 6px 6px rgba(0, 0, 0, 0.2);
+		overflow: hidden;
+		animation-name: shift-bottom;
+		animation-duration: 1s;
+	}
+	
+	@keyframes shift-right {
+		0% {
+			transform: translateX(-100%) rotateX(-90deg);
+			transform-origin: 0% 0%;
+			
+		}
+		100% {
+			transform: translateX(0) rotateX(0);
+			transform-origin: 0% 0%;
+		}
+	}
+		
+	@keyframes shift-bottom {
+		0% {
+			height: 0;
+		}
+		100% {
+			height: 100%;
+		}
 	}
 </style>

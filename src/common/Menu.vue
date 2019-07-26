@@ -2,7 +2,7 @@
 	<aside v-show="isOpen">
 		<div class="animation-cover">
 			<ul>
-				<li v-for="( item, i ) in menuItems" :key="item" :style="{ 'animation-delay': i * 0.5 + 's' }">{{ item }}</li>
+				<li v-for="( item, i ) in menuItems" :key="item" :style="{ 'animation-delay': i * 0.5 + 's' }"><div class="card">{{ item }}</div></li>
 			</ul>
 		</div>
 	</aside>
@@ -52,15 +52,21 @@ export default Vue.extend({
 	
 	li {
 		width: 100%;
-		padding: 1rem;
-		background-color: $primary-bg;
 		animation-name: shift-right;
 		animation-duration: 0.5s;
 		animation-timing-function: ease-out;
 		animation-fill-mode: forwards;
-		transform: translateX(-100%) rotateX(-90deg);
+		transform: translateX(-100%);
 		transform-origin: 0% 0%;
 		margin: 4px;
+	}
+	
+	.card {
+		padding: 1rem;
+		background-color: $primary-bg;
+		box-shadow: -8px 2px 2px rgba(255, 255, 255, 0.1);
+		animation: rotate-bottom 1s ease-out both;
+		animation-delay: inherit;
 	}
 	
 	li:hover {
@@ -80,12 +86,12 @@ export default Vue.extend({
 	
 	@keyframes shift-right {
 		0% {
-			transform: translateX(-100%) rotateX(-90deg);
+			transform: translateX(-100%);
 			transform-origin: 0% 0%;
 			
 		}
 		100% {
-			transform: translateX(0) rotateX(0);
+			transform: translateX(0);
 			transform-origin: 0% 0%;
 		}
 	}
@@ -96,6 +102,15 @@ export default Vue.extend({
 		}
 		100% {
 			height: 100%;
+		}
+	}
+	
+	@keyframes rotate-bottom {
+		0% {
+			transform: rotateX(90deg);
+		}
+		100% {
+			transform: rotateX(0deg);
 		}
 	}
 </style>
